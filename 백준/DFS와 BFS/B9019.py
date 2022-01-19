@@ -6,18 +6,13 @@ from collections import deque
 T = int(input())
 for _ in range(T):
     A, B = map(int, input().split())
-    tracking = [()] * 10000
+    visit = [False] * 10000
     queue = deque()
-    queue.append(A)
+    queue.append((A, ""))
     while queue:
-        n = queue.popleft()
+        n, command = queue.popleft()
         if n == B:
-            num, cmd = tracking[n]
-            ans = cmd
-            while num != A:
-                num, cmd = tracking[num]
-                ans += cmd
-            print(ans[::-1])
+            print(command)
             break
         for cmd in ('D', 'S', 'L', 'R'):
             num = n
@@ -37,6 +32,6 @@ for _ in range(T):
                     num = d2 * 1000 + d3 * 100 + d4 * 10 + d1
                 elif cmd == 'R':
                     num = d4 * 1000 + d1 * 100 + d2 * 10 + d3
-            if not tracking[num]:
-                queue.append(num)
-                tracking[num] = (n, cmd)
+            if not visit[num]:
+                queue.append((num, command + cmd))
+                visit[num] = True
