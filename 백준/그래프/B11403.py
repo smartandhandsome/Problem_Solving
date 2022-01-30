@@ -1,3 +1,6 @@
+"""
+https://www.acmicpc.net/problem/11403
+"""
 N = int(input())
 graph = []
 for _ in range(N):
