@@ -1,3 +1,14 @@
+"""
+반례
+6 5
+1 6
+2 4 5
+2 1 2
+2 2 3
+2 3 4
+2 5 6
+"""
+
 N, M = map(int, input().split())
 known_people = set(map(int, input().split()[1:]))
 
