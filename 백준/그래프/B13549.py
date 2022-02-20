@@ -1,3 +1,6 @@
+"""
+https://www.acmicpc.net/problem/13549
+"""
 from collections import deque
 
 N, K = map(int, input().split())
