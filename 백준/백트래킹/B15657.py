@@ -10,7 +10,7 @@ def function(x):
         return
     for num in nums:
         if not line or num >= line[-1]:
-            line.append (num)
+            line.append(num)
             function(x - 1)
             line.remove(num)
 
