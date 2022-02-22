@@ -10,7 +10,7 @@ for _ in range(N):
     num_list.append(int(input()))
 
 num_list.sort()
-print(f"{sum(num_list) / N:.0f}")
+print(round(sum(num_list) / N))
 print(num_list[N // 2])
 cnt = Counter(num_list).most_common()
 if N > 1 and cnt[0][1] == cnt[1][1]:
