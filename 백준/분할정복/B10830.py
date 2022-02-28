@@ -19,6 +19,9 @@ def multiply_matrix(a, b):
 
 def div(a, b):
     if b == 1:
+        for i in range(N):
+            for j in range(N):
+                a[i][j] %= 1000
         return a
     t = div(a, b // 2)
     if b % 2:
@@ -29,6 +32,4 @@ def div(a, b):
 
 result = div(matrix, M)
 for res in result:
-    for r in res:
-        print(r % 1000, end=" ")
-    print()
+    print(*res)
