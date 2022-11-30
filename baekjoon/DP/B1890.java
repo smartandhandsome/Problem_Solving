@@ -21,7 +21,7 @@ public class B1890 {
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
                 int jump = board[i][j];
-                if (jump == 0) {
+                if (jump == 0 || dp[i][j] == 0) {
                     continue;
                 }
                 if (i + jump < boardSize) {
